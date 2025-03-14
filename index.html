@@ -1,20 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phero Tube</title>
+    <link rel="shortcut icon" href="assets/play.png" type="image/x-icon">
 
     <!-- daisyUI -->
 
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <style>
+        .active {
+            background-color: #FF1F3D;
+            color: aliceblue;
+        }
+    </style>
+
+
+
 </head>
 
-<body>
-    <h1 class="text-blue-700">hello</h1>
+<body class="w-11/12 mx-auto">
+
+    <!-- logo navbar section -->
+    <header>
+        <nav class="flex justify-between mt-10 pb-6 border-b-2 border-gray-300">
+            <img src="assets/Logo.png" alt="Phero Tube Logo">
+            <button class="btn hover:bg-[#FF1F3D] border border-[#FF1F3D] bg-slate-50 hover:text-white ">Sort by
+                view</button>
+            <button class="btn bg-[#FF1F3D] text-white ">Blog</button>
+        </nav>
+    </header>
+
+    <!-- btn nav section -->
+
+    <nav id="category-container" class="flex justify-center pt-7 gap-5">
+        <div><button id="btn-all" onclick="loadVideos()"
+                class="btn btn-sm  hover:bg-[#FF1F3D] border border-[#FF1F3D] bg-slate-50 hover:text-white  ">All</button>
+        </div>
+    </nav>
+
+    <!-- display section -->
+
+    <section id="video-container" class="grid grid-cols-4 mt-8 gap-4">
+
+        <!-- <div class="card bg-base-100  shadow-sm">
+            <div class="card bg-base-100  shadow-sm">
+                <figure class="relative">
+                    <img class="w-full h-[9.375rem] object-cover" src="https://i.ibb.co/QPNzYVy/moonlight.jpg"
+                        alt="Building a Winning UX Strategy Using the Kano Model" />
+                    <span class="absolute bg-black text-white rounded-sm p-1 text-sm bottom-2 right-2 ">3hrs 56 min
+                        ago</span>
+                </figure>
+                <div class=" py-6 flex flex-row px-1 gap-3 items-start ">
+                    <div class="avatar">
+                        <div class="ring-primary w-10 h-10 rounded-full ring ">
+                          <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                        </div>
+                      </div>
+                    <div>
+                        <h2 class="card-title">
+                            Building a Winning UX Strategy Using the Kano Model
+                        </h2>
+                        <p class="text-[#171717B3] flex gap-2 ">Awlad Hossain <img class="w-5 h-5" src="https://img.icons8.com/?size=48&id=SRJUuaAShjVD&format=png" alt="verified badge"></p>
+                        <p class="text-[#171717B3]" >91K views</p>
+                    </div>
+
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="video_details.showModal()">open modal</button> -->
+        <dialog id="video_details" class="modal">
+            <div class="modal-box">
+                <h3 class="text-lg font-bold">Hello!</h3>
+                <p class="py-4">Press ESC key or click the button below to close</p>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
+
+
+
+    </section>
+
+
+    <script src="script/index.js"></script>
 </body>
 
 </html>
